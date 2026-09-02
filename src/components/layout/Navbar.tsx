@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from '@/components/ui/Logo';
 import Button from '@/components/ui/Button';
@@ -12,6 +13,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-lg">
@@ -33,10 +35,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button variant="ghost" size="sm">
+          <Button variant="ghost" size="sm" onClick={() => navigate('/connexion')}>
             Se connecter
           </Button>
-          <Button variant="primary" size="sm">
+          <Button variant="primary" size="sm" onClick={() => navigate('/inscription')}>
             Commencer gratuitement
           </Button>
         </div>
@@ -64,10 +66,10 @@ export default function Navbar() {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-2">
-              <Button variant="secondary" size="sm">
+              <Button variant="secondary" size="sm" onClick={() => navigate('/connexion')}>
                 Se connecter
               </Button>
-              <Button variant="primary" size="sm">
+              <Button variant="primary" size="sm" onClick={() => navigate('/inscription')}>
                 Commencer gratuitement
               </Button>
             </div>

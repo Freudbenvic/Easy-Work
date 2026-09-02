@@ -16,14 +16,25 @@ npm run dev
 src/
 ├── components/
 │   ├── ui/          # Composants génériques (Button, Logo, BeforeAfterSlider...)
-│   ├── layout/       # Navbar, Footer
-│   └── landing/      # Sections de la landing page
-├── pages/            # Une page = une route
+│   ├── layout/       # Navbar, Footer (landing)
+│   ├── landing/      # Sections de la landing page
+│   └── dashboard/    # Sidebar du dashboard
+├── layouts/          # DashboardLayout (sidebar + zone de contenu)
+├── pages/
+│   └── dashboard/    # DashboardHome (accueil connecté)
+├── data/             # tools.ts — liste des outils IA (catégories, icônes, coûts)
 ├── services/         # Appels API (authService, imageService...) — à venir
 ├── hooks/            # Hooks custom — à venir
 ├── lib/              # Utilitaires, config axios — à venir
 └── types/            # Types partagés — à venir
 ```
+
+## Routes disponibles
+
+- `/` — Landing page
+- `/inscription`, `/connexion` — pages à construire (placeholder)
+- `/dashboard` — Accueil dashboard (sidebar + outils populaires)
+- `/dashboard/outils`, `/historique`, `/favoris`, `/credits`, `/mes-images`, `/parametres`, `/profil` — placeholders, à construire
 
 ## Identité visuelle
 

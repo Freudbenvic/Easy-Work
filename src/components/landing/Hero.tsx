@@ -1,4 +1,5 @@
 import { Sparkles, Play, Zap, ShieldCheck, Gauge, MousePointerClick } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/Button';
 import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider';
 
@@ -10,6 +11,7 @@ const highlights = [
 ];
 
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section id="accueil" className="relative overflow-hidden bg-white">
       {/* Ambiance douce en fond, sans surcharger */}
@@ -34,7 +36,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" onClick={() => navigate('/inscription')}>
               Commencer gratuitement
             </Button>
             <Button variant="secondary" size="lg" icon={<Play size={16} />}>

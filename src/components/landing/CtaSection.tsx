@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/Button';
 
 export default function CtaSection() {
+  const navigate = useNavigate();
   return (
     <section id="a-propos" className="py-24">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
@@ -19,6 +21,7 @@ export default function CtaSection() {
             <Button
               variant="secondary"
               size="lg"
+              onClick={() => navigate('/inscription')}
               className="border-0 bg-white text-[var(--color-primary-dark)] hover:bg-indigo-50"
             >
               Commencer gratuitement

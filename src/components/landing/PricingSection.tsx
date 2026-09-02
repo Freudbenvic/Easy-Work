@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/Button';
 
 const plans = [
@@ -40,6 +41,7 @@ const plans = [
 ];
 
 export default function PricingSection() {
+  const navigate = useNavigate();
   return (
     <section id="tarifs" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -101,6 +103,7 @@ export default function PricingSection() {
 
               <Button
                 variant={plan.featured ? 'primary' : 'secondary'}
+                onClick={() => navigate('/inscription')}
                 className={`mt-8 w-full ${plan.featured ? '' : ''}`}
               >
                 {plan.cta}
